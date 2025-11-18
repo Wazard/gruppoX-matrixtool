@@ -1,6 +1,6 @@
-from MatrixHandler import MatrixHandler
+from MatrixHandler import MatrixHandler as Handler
 
-class MatrixFilter(MatrixHandler):
+class MatrixFilter(Handler):
     def rectificate(self):
         # Replace all negative values in the matrix with 0 (ReLU).
         for row in range(len(self.data)):
@@ -14,7 +14,7 @@ class MatrixFilter(MatrixHandler):
             flattened_matrix.extend(row)
         return flattened_matrix
 
-
+""" 
 matrix = MatrixHandler([[1, -2, 3], [-4, 5, -6], [5,2,-3]])
 filter = MatrixFilter(matrix.data)
 
@@ -25,4 +25,4 @@ filter.rectificate()
 print("\nRectified matrix:")
 filter.print_matrix()
 
-print("\nFlattened matrix:", filter.flatten())
+print("\nFlattened matrix:", filter.flatten()) """

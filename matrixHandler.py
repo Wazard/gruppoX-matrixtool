@@ -28,7 +28,7 @@ class MatrixHandler:
     def __repr__(self):
         return f"MatrixHandler(rows={len(self.data)}, cols={len(self.data[0]) if self.data else 0})"
 
-
+""" 
 matrix1 = MatrixHandler([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
 matrix2 = MatrixHandler([[1, 2], [3, 4, 5]])  # invalid
 
@@ -38,4 +38,4 @@ print(f"Matrix is {('invalid','valid')[matrix1.validate()]}")
 
 print("\nMatrix 2:")
 matrix2.print_matrix()
-print(f"Matrix is {('invalid','valid')[matrix2.validate()]}")
+print(f"Matrix is {('invalid','valid')[matrix2.validate()]}") """
