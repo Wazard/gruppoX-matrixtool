@@ -6,10 +6,13 @@ class ElaboratoreMatematico(MatrixHandler):
         
     def trasponi(self):
         new_data = []
-        row = 0
-        column = 0
-        for riga in self.data:
-            pass
+        row = len(self.data)
+        column = len(self.data[0])
+        for r in range(row):
+            new_row = []
+            for c in range(column):
+                new_row.append(self.data[r][c])
+                new_data.append(new_row)
         return new_data
     
     def moltiplica_per_scalare(self, k:float):
@@ -31,7 +34,9 @@ matrix = [
 
 elaboratore = ElaboratoreMatematico(matrix)
 
-#trasponi = elaboratore.trasponi()
+trasponi = elaboratore.trasponi()
+
+print(trasponi)
 
 scalare = elaboratore.moltiplica_per_scalare(2)
 
