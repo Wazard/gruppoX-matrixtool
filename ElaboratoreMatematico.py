@@ -1,19 +1,21 @@
 from matrixHandler import *
 
 class ElaboratoreMatematico(MatrixHandler):
+    #richiede gli stessi parametri della superclasse
     def __init__(self,  data: list[list[float]]):
         super().__init__(data)
         
     def trasponi(self):
-        new_data = []
-        row = len(self.data)
-        column = len(self.data[0])
-        for r in range(row):
-            new_row = []
-            for c in range(column):
-                new_row.append(self.data[r][c])
-                new_data.append(new_row)
-        return new_data
+        rows = len(matrix)
+        cols = len(matrix[0]) if rows > 0 else 0
+
+        tmp = [[0] * rows for _ in range(cols)]
+
+        for row in range(rows):
+            for col in range(cols):
+                tmp[col][row] = matrix[row][col]
+
+        return tmp
     
     def moltiplica_per_scalare(self, k:float):
         result = []
@@ -27,17 +29,14 @@ class ElaboratoreMatematico(MatrixHandler):
         
 #TEST
 matrix = [
-    [1, 2, 3, 4],
-    [5, 6, 7, 8],
-    [9, 10, 11, 12]
+    [1, 2, 3],
+    [5, 6, 7],
+    [9, 10, 11]
 ]
 
 elaboratore = ElaboratoreMatematico(matrix)
 
 trasponi = elaboratore.trasponi()
+matrix_trasponi = MatrixHandler(trasponi)
 
-print(trasponi)
-
-scalare = elaboratore.moltiplica_per_scalare(2)
-
-print(scalare)
+matrix_trasponi.print_matrix()
