@@ -1,5 +1,5 @@
 # Import classes from your modules, with aliases for convenience
-from MatrixHandler import MatrixHandler as Handler
+from MyMatrixHandler import MatrixHandler as Handler
 from MatrixFilter import MatrixFilter as Filter
 from StatisticElavuator import StatisticEvaluator as Eval
 

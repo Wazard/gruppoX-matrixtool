@@ -1,4 +1,4 @@
-from MatrixHandler import MatrixHandler as Handler
+from MyMatrixHandler import MatrixHandler as Handler
 
 class MatrixFilter(Handler):
 
