@@ -9,21 +9,30 @@ class ElaboratoreMatematico(MatrixHandler):
         row = 0
         column = 0
         for riga in self.data:
-            new_data[row][column].append(riga)
-            if len(self.data[row])<column:
-                column += 1
+            pass
         return new_data
     
     def moltiplica_per_scalare(self, k:float):
-        row = 0
-        column = 0
+        result = []
         for riga in self.data:
+            new_row = []
             for elemento in riga:
-                elemento *=k
-                self.data[row][column] = elemento
-                column += 1
-            row +=1
+                new_row.append(elemento*k)
+            result.append(new_row)
                 
-        return self.data
+        return result
         
 #TEST
+matrix = [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12]
+]
+
+elaboratore = ElaboratoreMatematico(matrix)
+
+#trasponi = elaboratore.trasponi()
+
+scalare = elaboratore.moltiplica_per_scalare(2)
+
+print(scalare)
