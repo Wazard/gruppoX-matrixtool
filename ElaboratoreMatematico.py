@@ -1,4 +1,4 @@
-from MyMatrixHandler import *
+from MatrixHandler import *
 
 class ElaboratoreMatematico(MatrixHandler):
     #richiede gli stessi parametri della superclasse
