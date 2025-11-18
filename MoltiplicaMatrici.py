@@ -11,6 +11,6 @@ def moltiplica_matrice(matrix_1:MatrixHandler, matrix_2:MatrixHandler):
     for i in range(row_matrix_1):
         for n in range(column_matrix_2):
             for k in range(column_matrix_1):
-                tmp[i][k] += matrix_1[i][k] * matrix_2[k][n]
+                tmp[i][n] += matrix_1[i][k] * matrix_2[k][n]
                 
     return tmp
