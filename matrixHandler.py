@@ -2,7 +2,7 @@ class MatrixHandler:
     def __init__(self, data: list[list[float]]):
         self.data = data
 
-    def print_matrix(self):
+    def print(self):
         # Print the matrix in a readable format.
         for row in self.data:
             print(" ".join(str(val) for val in row))
